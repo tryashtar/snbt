@@ -1,1 +1,1 @@
-$data modify storage snbt:temp context.escaped_key set string storage snbt:temp context.escaped_key 0 $(length)
+$data modify storage snbt:temp context.escaped_string set string storage snbt:temp context.escaped_string 0 $(length)
