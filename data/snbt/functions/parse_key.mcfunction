@@ -1,9 +1,13 @@
-$data modify storage snbt:temp context.char set string storage snbt:temp snbt $(start) $(end)
-execute if score escape snbt matches 0 if data storage snbt:temp context{char:"\\"} run scoreboard players set escape snbt 2
-execute if score escape snbt matches 0 if data storage snbt:temp context{char:":"} run return 1
-execute if score escape snbt matches 0..1 if score quote snbt matches 0..1 run function snbt:append_char_single with storage snbt:temp context
-execute if score escape snbt matches 0..1 if score quote snbt matches 2 run function snbt:append_char_double with storage snbt:temp context
-execute if score escape snbt matches 1.. run scoreboard players remove escape snbt 1
+data modify storage snbt:temp context.key set string storage snbt:temp snbt 2 3
+scoreboard players set end snbt 3
+execute if data storage snbt:temp context{key:"\\"} run scoreboard players add end snbt 1
+execute if data storage snbt:temp context{key:"\\"} run data modify storage snbt:temp context.key set value '"'
 execute store result storage snbt:temp context.start int 1 run scoreboard players get end snbt
 execute store result storage snbt:temp context.end int 1 run scoreboard players add end snbt 1
-function snbt:parse_key with storage snbt:temp context
+scoreboard players set escape snbt 0
+execute if data storage snbt:temp context{key:'"'} run return run function snbt:parse_key_double with storage snbt:temp context
+execute if data storage snbt:temp context{key:"'"} run return run function snbt:parse_key_single with storage snbt:temp context
+# plain keys don't need to be unescaped, we can simply find the end and extract them directly from the stream
+function snbt:parse_key_plain with storage snbt:temp context
+execute store result storage snbt:temp context.end int 1 run scoreboard players remove end snbt 1
+function snbt:parse_key_plain_2 with storage snbt:temp context
