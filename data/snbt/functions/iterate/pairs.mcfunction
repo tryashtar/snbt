@@ -2,7 +2,7 @@ execute store result storage snbt:temp context.start int 1 run scoreboard player
 execute store result storage snbt:temp context.end int 1 run scoreboard players add end snbt 1
 function snbt:parse/string with storage snbt:temp context
 data modify storage snbt:temp context.key set from storage snbt:temp context.string
-function snbt:display/string
+function snbt:display/key
 execute store result storage snbt:temp context.start int 1 run scoreboard players add end snbt 1
 execute store result storage snbt:temp context.end int 1 run scoreboard players add end snbt 1
 function snbt:parse/value with storage snbt:temp context
