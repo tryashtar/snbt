@@ -1,5 +1,6 @@
 data modify storage snbt:temp output append value '"{"'
-scoreboard players remove end snbt 1
-execute store result score keys snbt run data get storage snbt:temp nbt
-execute if score keys snbt matches 1.. run function snbt:display/pairs
+function snbt:parse/next
+function snbt:parse/peek with storage snbt:temp context
+execute unless data storage snbt:temp {char:"}"} run function snbt:display/pairs
+function snbt:parse/next
 data modify storage snbt:temp output append value '"}"'

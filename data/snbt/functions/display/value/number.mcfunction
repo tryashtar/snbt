@@ -1,4 +1,4 @@
-function snbt:parse/number with storage snbt:temp context
+function snbt:parse/number
 function snbt:parse/finish with storage snbt:temp context
 data modify storage snbt:temp number set string storage snbt:temp value 0 -1
 data modify storage snbt:temp suffix set string storage snbt:temp value -1

@@ -3,3 +3,4 @@ data modify entity 0-0-0-0-1 text set value '{"storage":"snbt:temp","nbt":"nbt"}
 data modify storage snbt:temp context.snbt set from entity 0-0-0-0-1 text
 function snbt:convert/flatten with storage snbt:temp context
 kill 0-0-0-0-1
+execute store result score length snbt run data get storage snbt:temp context.snbt
