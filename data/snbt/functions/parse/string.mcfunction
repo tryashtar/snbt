@@ -5,4 +5,3 @@ execute store result storage snbt:temp context.end int 1 run scoreboard players 
 execute if data storage snbt:temp {start:'"'} run function snbt:parse/string/double with storage snbt:temp context
 execute if data storage snbt:temp {start:"'"} run function snbt:parse/string/single with storage snbt:temp context
 execute unless data storage snbt:temp {start:'"'} unless data storage snbt:temp {start:"'"} run function snbt:parse/string/plain with storage snbt:temp context
-function snbt:parse/finish with storage snbt:temp context

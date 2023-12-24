@@ -1,0 +1,6 @@
+execute if data storage snbt:temp {suffix:"b"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"b","color":"red"}]'
+execute if data storage snbt:temp {suffix:"f"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"f","color":"red"}]'
+execute if data storage snbt:temp {suffix:"d"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"d","color":"red"}]'
+execute if data storage snbt:temp {suffix:"s"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"s","color":"red"}]'
+execute if data storage snbt:temp {suffix:"L"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"L","color":"red"}]'
+data modify entity 0-0-0-0-1 text set value '{"storage":"snbt:temp","nbt":"value","color":"gold"}'
