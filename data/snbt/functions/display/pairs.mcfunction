@@ -1,3 +1,4 @@
+scoreboard players add entries snbt 1
 function snbt:display/key
 data modify storage snbt:temp output append value '": "'
 function snbt:parse/next
