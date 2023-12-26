@@ -10,10 +10,12 @@ execute store success score string snbt run data modify storage snbt:temp char s
 execute if score string snbt matches 1 run data modify storage snbt:temp wrapped set value []
 execute if score string snbt matches 1 run data modify storage snbt:temp wrapped append from storage snbt:temp nbt
 execute if score string snbt matches 1 run data modify storage snbt:temp nbt set from storage snbt:temp wrapped
+summon text_display ~ ~ ~ {UUID:[I;1835364978,2032165736,1919513460,1835103009],alignment:"center"}
 scoreboard players set nested snbt 0
 function snbt:convert/snbt
 scoreboard players set end snbt 0
 function snbt:parse/next
 scoreboard players set depth snbt 0
 function snbt:display/value
+kill 6d657272-7920-6368-7269-73746d617321
 tellraw @s {"storage":"snbt:temp","nbt":"output[]","interpret":true,"separator":""}
