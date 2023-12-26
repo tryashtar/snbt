@@ -3,7 +3,7 @@
 execute if score collapse snbt matches 1 if score depth snbt matches 1.. run return run function snbt:display/collapsed/list
 
 # write and skip opening bracket
-data modify storage snbt:temp output append value '"["'
+execute if score string snbt matches 0 run data modify storage snbt:temp output append value '"["'
 function snbt:parse/next
 
 # we need to check if this list is empty, and also remember it after processing child objects
@@ -37,5 +37,5 @@ scoreboard players operation tabs snbt = depth snbt
 execute if score pretty snbt matches 1 unless data storage snbt:temp {size:0} if score tabs snbt matches 1.. run function snbt:display/tabs
 
 # write and skip closing bracket
-data modify storage snbt:temp output append value '"]"'
+execute if score string snbt matches 0 run data modify storage snbt:temp output append value '"]"'
 function snbt:parse/next
