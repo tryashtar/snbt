@@ -1,7 +1,8 @@
+# not an entry point, wrapped by others to do setup and printing
 data modify storage snbt:temp output set value []
 data modify storage snbt:temp stack set value []
 data modify storage snbt:temp nested set value []
-data modify storage snbt:temp empty_stack set value []
+data modify storage snbt:temp size_stack set value []
 scoreboard players set nested snbt 0
 function snbt:convert/snbt
 scoreboard players set end snbt 0

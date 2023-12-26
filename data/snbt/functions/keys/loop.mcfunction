@@ -1,3 +1,5 @@
+# recursively append all key names in the compound
+# keys are deleted as we go, so we don't have to bother parsing values
 execute store result storage snbt:temp context.start int 1 run scoreboard players set end snbt 1
 execute store result storage snbt:temp context.end int 1 run scoreboard players add end snbt 1
 data modify storage snbt:temp context.beginning set value 1

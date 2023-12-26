@@ -1,6 +1,8 @@
+# append a string to the output in key form
 data modify storage snbt:temp context.beginning set from storage snbt:temp context.start
 function snbt:parse/string
 function snbt:parse/finish with storage snbt:temp context
+# outer quotes are shown in white, with the text including escapes in aqua
 data modify storage snbt:temp quote set string storage snbt:temp value 0 1
 data modify storage snbt:temp contents set string storage snbt:temp value 1 -1
 summon text_display ~ ~ ~ {UUID:[I;0,0,0,1],alignment:"center"}

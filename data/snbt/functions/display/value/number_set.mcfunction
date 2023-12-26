@@ -1,3 +1,5 @@
+# show suffix in red if it exists
+# bytes appear with capital B in byte arrays, lowercase B elsewhere
 execute if data storage snbt:temp {suffix:"b"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"b","color":"red"}]'
 execute if data storage snbt:temp {suffix:"B"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"B","color":"red"}]'
 execute if data storage snbt:temp {suffix:"f"} run return run data modify entity 0-0-0-0-1 text set value '[{"storage":"snbt:temp","nbt":"number","color":"gold"},{"text":"f","color":"red"}]'

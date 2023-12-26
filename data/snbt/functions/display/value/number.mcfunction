@@ -1,3 +1,4 @@
+# append a number to the output
 function snbt:parse/number
 function snbt:parse/finish with storage snbt:temp context
 data modify storage snbt:temp number set string storage snbt:temp value 0 -1

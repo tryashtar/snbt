@@ -1,3 +1,4 @@
+# determine if this character is the start of a number value
 execute if data storage snbt:temp {char:"-"} run return 1
 execute if data storage snbt:temp {char:"0"} run return 1
 execute if data storage snbt:temp {char:"1"} run return 1
