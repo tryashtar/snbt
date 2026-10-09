@@ -1,6 +1,7 @@
 {
    "pack": {
-      "pack_format": 27,
+      "min_format": 123,
+      "max_format": 123,
       "description": "SNBT parsing pack"
    }
 }
