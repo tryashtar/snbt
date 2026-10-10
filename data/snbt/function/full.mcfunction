@@ -1,7 +1,9 @@
 # entry point: prints full data at path to sender, indented
 scoreboard objectives add snbt dummy
-# "store success" will fail if path doesn't exist, or data is identical
-# so set it to something unlikely
+# we want to exit early with failure if the path doesn't exist
+# but we can't use 'execute if data', because the user may provide a path without a root compound
+# so we instead use 'execute store success' while copying to storage
+# this will also fail if data is identical, so set it to something unlikely
 data modify storage snbt:temp nbt set value [[[[0b]]]]
 $execute store success score found snbt run data modify storage snbt:temp nbt set from $(path)
 execute if score found snbt matches 0 run return run tellraw @s {"text":"No data found at that path","color":"red"}
