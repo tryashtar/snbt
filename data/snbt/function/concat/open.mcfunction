@@ -4,7 +4,8 @@ execute if data storage snbt:temp {peek:{text:"B"}} run function snbt:concat/arr
 execute if data storage snbt:temp {peek:{text:"L"}} run function snbt:concat/array
 execute if data storage snbt:temp {peek:"}"} run return run function snbt:concat/empty
 execute if data storage snbt:temp {peek:"]"} run return run function snbt:concat/empty
+data modify storage snbt:temp stack append value []
 execute if score pretty snbt matches 0 run return 0
-data modify storage snbt:temp output append value "\n"
-data modify storage snbt:temp indent append value "  "
-data modify storage snbt:temp output append from storage snbt:temp indent[]
+data modify storage snbt:temp stack[-1] append value "\n"
+data modify storage snbt:temp indent append value " "
+data modify storage snbt:temp stack[-1] append from storage snbt:temp indent[]
