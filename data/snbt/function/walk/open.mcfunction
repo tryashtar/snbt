@@ -18,7 +18,7 @@ execute if data storage snbt:temp {peek:"]"} run return run function snbt:walk/e
 data modify storage snbt:temp stack append from storage snbt:temp next_stack
 
 # start a new line
-execute if score pretty snbt matches 1 run function snbt:walk/indent/in
+execute if score #pretty snbt matches 1 run function snbt:walk/indent/in
 
 # proceed to the next token
 execute if data storage snbt:temp text[0] run function snbt:walk/next
