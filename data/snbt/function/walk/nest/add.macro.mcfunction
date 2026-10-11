@@ -1,0 +1,1 @@
+$data modify storage snbt:temp stack[-2].text append value [" ",{text:"$(entries) entries...",plain:true,color:"gray",italic:true,hover_event:{action:"show_text",value:{storage:"snbt:temp",nbt:"lookups[$(index)]",interpret:true}},click_event:{action:"run_command",command:'tellraw @s {storage:"snbt:temp",nbt:"lookups[$(index)]",interpret:true}'}}," "]
