@@ -11,7 +11,8 @@ execute if data storage snbt:temp {peek:"}"} run return run function snbt:walk/e
 execute if data storage snbt:temp {peek:"]"} run return run function snbt:walk/empty
 
 # push to the stack
-data modify storage snbt:temp stack append value {text:[],entries:1}
+data modify storage snbt:temp stack append value {text:[],entries:1,open:"{",close:"}"}
+execute if data storage snbt:temp {token:"["} run data modify storage snbt:temp stack[-1] merge value {open:"[",close:"]"}
 
 # start a new line
 execute if score pretty snbt matches 1 run function snbt:walk/indent/in
