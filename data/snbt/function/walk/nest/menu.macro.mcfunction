@@ -1,0 +1,1 @@
+$data modify storage snbt:temp stack[-2].text append value [" ",{text:"$(entries) entries...",plain:true,color:"gray",italic:true,hover_event:{action:"show_text",value:$(resolved)},click_event:{action:"run_command",command:'function snbt:show/dialog.macro with storage snbt:temp lookups[$(index)]'}}," "]
