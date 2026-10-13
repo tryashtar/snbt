@@ -2,6 +2,7 @@
 data remove storage snbt:temp text[0]
 data modify storage snbt:temp stack[-1].text append from storage snbt:temp token
 
+# prepare the new stack entry
 data modify storage snbt:temp next_stack set value {text:[],entries:1,open:"{",close:"}"}
 execute if data storage snbt:temp {token:"["} run data modify storage snbt:temp next_stack merge value {open:["["],close:"]"}
 

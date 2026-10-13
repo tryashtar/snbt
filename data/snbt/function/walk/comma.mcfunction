@@ -5,7 +5,7 @@ data modify storage snbt:temp stack[-1].text append value ","
 # start a new line
 execute if score #pretty snbt matches 1 run function snbt:walk/indent/line
 
-# add one entry to this stack entry
+# increment this stack entry count
 execute store result score #entries snbt run data get storage snbt:temp stack[-1].entries
 execute store result storage snbt:temp stack[-1].entries int 1 run scoreboard players add #entries snbt 1
 

@@ -1,3 +1,4 @@
+# add a collapsed section
 execute store result storage snbt:temp stack[-1].index int 1 run data get storage snbt:temp lookups
 data modify storage snbt:temp lookups append from storage snbt:temp stack[-1].text
 data modify storage snbt:temp lookups[-1] prepend from storage snbt:temp stack[-1].open
