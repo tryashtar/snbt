@@ -1,9 +1,11 @@
-# colored text (keys and values) can be appended quickly and directly
-execute if data storage snbt:temp text[0].text run return run function snbt:walk/text
-
-# some plain text tokens represent structure where we need to run extra commands
 data modify storage snbt:temp token set from storage snbt:temp text[0]
+
 execute if data storage snbt:temp {token:","} run return run function snbt:walk/comma
+execute if data storage snbt:temp token{color:"aqua"} run return run function snbt:walk/key
+execute if data storage snbt:temp token.extra[{color:"aqua"}] run return run function snbt:walk/quoted_key
+execute if data storage snbt:temp token{color:"gold"} run return run function snbt:walk/number
+execute if data storage snbt:temp {token:"'"} run return run function snbt:walk/string
+execute if data storage snbt:temp {token:'"'} run return run function snbt:walk/string
 execute if data storage snbt:temp {token:"{"} run return run function snbt:walk/open
 execute if data storage snbt:temp {token:"["} run return run function snbt:walk/open
 execute if data storage snbt:temp {token:"}"} run return run function snbt:walk/close

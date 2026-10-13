@@ -7,10 +7,7 @@ execute if data storage snbt:temp {token:"["} run data modify storage snbt:temp 
 
 # check the next tokens to decide what to do
 data modify storage snbt:temp peek set from storage snbt:temp text[0]
-execute if data storage snbt:temp {peek:{text:"I"}} run function snbt:walk/array
-execute if data storage snbt:temp {peek:{text:"B"}} run function snbt:walk/array
-execute if data storage snbt:temp {peek:{text:"L"}} run function snbt:walk/array
-data modify storage snbt:temp peek set from storage snbt:temp text[0]
+execute if data storage snbt:temp {peek:{color:"red"}} run function snbt:walk/array
 execute if data storage snbt:temp {peek:"}"} run return run function snbt:walk/empty
 execute if data storage snbt:temp {peek:"]"} run return run function snbt:walk/empty
 
